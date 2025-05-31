@@ -15,7 +15,7 @@
     .intro-block {
       padding: 60px 20px;
       max-width: 900px;
-      margin: auto;
+      margin: 40px auto;
       background-color: #fff3cd;
       border-left: 8px solid #856404;
       border-radius: 12px;
@@ -31,6 +31,50 @@
     .intro-block p {
       font-size: 18px;
       line-height: 1.7;
+    }
+
+    .toggle-button {
+      display: block;
+      margin: 30px auto;
+      padding: 12px 24px;
+      font-size: 18px;
+      background-color: #0c5460;
+      color: #fff;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .toggle-button:hover {
+      background-color: #084c55;
+    }
+
+    .members-block {
+      padding: 40px 20px;
+      max-width: 900px;
+      margin: 20px auto;
+      background-color: #d1ecf1;
+      border-left: 8px solid #0c5460;
+      border-radius: 12px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      transition: all 0.4s ease;
+    }
+
+    .members-block h2 {
+      font-size: 28px;
+      color: #0c5460;
+      margin-bottom: 20px;
+    }
+
+    .member {
+      font-size: 18px;
+      line-height: 1.6;
+      margin-bottom: 12px;
+    }
+
+    .hidden {
+      display: none;
     }
   </style>
 </head>
@@ -49,6 +93,35 @@
       Это не просто чат — это забавное, безумное и в чём-то великое явление. И несмотря на цифровую форму общения, каждый участник этой хунты надеется, что однажды все они смогут собраться вместе — уже в реальной жизни.
     </p>
   </div>
+
+  <button class="toggle-button" onclick="toggleMembers()">Скрыть участников</button>
+
+  <div id="membersBlock" class="members-block">
+    <h2>Участники</h2>
+    <div class="member">🪨 <strong>Дон Камень</strong> — коммунист, душитель анекдотов и главный мудрец чата с философским уклоном 💣📢🤡</div>
+    <div class="member">🪷 <strong>晨光 (Фембойчик)</strong> — драматург, эстэт, юри-арт эксперт и провокатор с палкой 🚲💅🎨</div>
+    <div class="member">🦄 <strong>Андрей Чувачок</strong> — испанский либертарный Пиндос, король треугольников и прямых откровений 🇪🇸🤠🔥</div>
+    <div class="member">👨‍🏫 <strong>Михаил Александрович</strong> — историк, культуролог и любитель неожиданных лекций 📚🤓🎩</div>
+    <div class="member">🚩 <strong>Ком. Паук</strong> — картельный босс, черный юмор, спам и бесконечные истерики 🤡🔥🕷️</div>
+    <div class="member">💀 <strong>Лорд Дио</strong> — нарцисс и мастер острых шуток, игры в русскую рулетку и пафоса 🎭🔫😈</div>
+    <div class="member">🍫 <strong>Райто</strong> — объект массовой любви и нескончаемых ухаживаний 💘🍫👀</div>
+    <div class="member">🧘‍♀️ <strong>Сахар</strong> — буддистка, перед которой даже ком. Паук бессилен 🧘‍♀️😌🌸</div>
+    <div class="member">X‌‌D‌‌ — странный самоубийца с нарциссическим френдом, ходячая драма 💥🩸🤡</div>
+  </div>
+
+  <script>
+    const membersBlock = document.getElementById('membersBlock');
+    const toggleButton = document.querySelector('.toggle-button');
+
+    function toggleMembers() {
+      membersBlock.classList.toggle('hidden');
+      if (membersBlock.classList.contains('hidden')) {
+        toggleButton.textContent = 'Показать участников';
+      } else {
+        toggleButton.textContent = 'Скрыть участников';
+      }
+    }
+  </script>
 
 </body>
 </html>
